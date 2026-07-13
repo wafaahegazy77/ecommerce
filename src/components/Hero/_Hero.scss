@@ -1,0 +1,45 @@
+.header {
+
+    .inner {
+        .item {
+            position: relative;
+            border-radius: 50px;
+            overflow: hidden;
+            min-height: 75vh;
+            align-items: center;
+            display: flex;
+            .txt_box {
+                position: relative;
+                z-index: 5;
+                padding-inline-start: 5vw;
+                .subtitle {
+                    font-style: italic;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .header .inner .item {
+        min-height: 35vh;
+        border-radius: 25px;
+        .txt_box {
+            .subtitle {
+                font-size: 15px;
+            }
+            .title {
+                font-size: 18px !important;
+            }
+            .p {
+                display: none;
+            }
+        }
+    }
+
+}

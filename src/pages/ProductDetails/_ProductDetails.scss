@@ -1,0 +1,36 @@
+.product_det {
+
+    .img_box {
+
+        .lg_img img {
+            height: 450px;
+            object-fit: contain;
+            border-radius: 25px;
+            border: 1px solid #eee;
+        }
+        .sm_imgs {
+            gap: 1rem;
+            img {
+                max-width: 150px;
+                height: 150px;
+                aspect-ratio: 1/1;
+                border-radius: 25px;
+                border: 1px solid #eee;
+                object-fit: contain;
+            }
+        }
+
+    }
+
+    .txt_box {
+        .stars {
+            color: rgb(215, 194, 5);
+            font-size: 18px;
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+        }
+    }
+
+    
+}
