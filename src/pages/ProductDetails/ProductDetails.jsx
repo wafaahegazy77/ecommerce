@@ -7,6 +7,7 @@ import { LuShoppingCart } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { IoMdShare } from "react-icons/io";
 import ProductsSlider from '../../components/ProductsSlider/ProductsSlider';
+import Footer from '../../components/Footer/Footer'
 
 
 function ProductDetails() {
@@ -130,6 +131,8 @@ function ProductDetails() {
                     />
                 )
             }
+
+            <Footer/>
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Hero from '../../components/Hero/Hero'
 import ProductsSlider from '../../components/ProductsSlider/ProductsSlider'
+import Footer from '../../components/Footer/Footer'
 
 const categories = [
     "smartphones",
@@ -57,7 +58,7 @@ const Home = () => {
                 )
             }
 
-
+            <Footer/>
            
         </>
     )
