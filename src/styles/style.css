@@ -2223,6 +2223,136 @@ form .form-check-input {
   direction: ltr;
 }
 
+.skeleton-loader .prod_card {
+  background: #f9f9f9;
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid #f5f5f5;
+}
+.skeleton-loader .img_box {
+  border: 1px solid #eee;
+  border-radius: 15px;
+  height: 300px;
+  overflow: hidden;
+}
+.skeleton-loader .skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #ececec;
+  border-radius: 10px;
+}
+.skeleton-loader .skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  animation: shimmer 1.2s infinite;
+}
+.skeleton-loader .skeleton-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.skeleton-loader .card-body {
+  padding: 1rem 1.25rem;
+}
+.skeleton-loader .skeleton-name {
+  width: 85%;
+  height: 18px;
+  margin-bottom: 14px;
+}
+.skeleton-loader .stars {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+}
+.skeleton-loader .skeleton-star {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.skeleton-loader .skeleton-price {
+  width: 80px;
+  height: 20px;
+  margin-top: 10px;
+}
+.skeleton-loader .skeleton-subheading {
+  width: 350px;
+  max-width: 100%;
+  height: 16px;
+  margin-bottom: 30px;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.product_det_skeleton .img_box {
+  height: 650px;
+  border: none;
+}
+.product_det_skeleton .img-placeholder {
+  width: 100%;
+  height: 450px;
+  border-radius: 25px;
+  display: block;
+  border: 1px solid #eee;
+}
+.product_det_skeleton .thumb-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+.product_det_skeleton .title {
+  width: 70%;
+  height: 45px;
+  margin-bottom: 20px;
+}
+.product_det_skeleton .price {
+  width: 120px;
+  height: 30px;
+  margin: 25px 0;
+}
+.product_det_skeleton .description {
+  margin: 25px 0;
+}
+.product_det_skeleton .description .line {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 12px;
+}
+.product_det_skeleton .description .line.short {
+  width: 65%;
+}
+.product_det_skeleton .info-line {
+  width: 45%;
+  height: 18px;
+  margin-bottom: 18px;
+}
+.product_det_skeleton .stock {
+  width: 70%;
+  height: 22px;
+}
+.product_det_skeleton .actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.product_det_skeleton .cart-btn {
+  width: 190px;
+  height: 48px;
+  border-radius: 10px;
+}
+.product_det_skeleton .icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
 [type=email], [type=number], [type=tel], [type=url] {
   direction: inherit !important;
 }

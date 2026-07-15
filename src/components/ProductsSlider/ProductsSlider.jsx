@@ -11,7 +11,9 @@ import 'swiper/css/navigation';
 import './_ProductsSlider.scss'
 import Procduct from './Procduct'
 
+
 const ProductsSlider = ({data, title}) => {
+
     return (
         <>
             <section className='products_sec section'>
@@ -46,13 +48,12 @@ const ProductsSlider = ({data, title}) => {
                         className="mySwiper"
                     >
                         {
-                            data.map((item) => {
-                                return (
-                                    <SwiperSlide>
-                                        <Procduct item={item} />
-                                    </SwiperSlide>
-                                )
-                            })
+                            Array.isArray(data) &&
+                            data.map((item) => (
+                                <SwiperSlide key={item.id}>
+                                    <Procduct item={item} />
+                                </SwiperSlide>
+                            ))
                         }
 
               

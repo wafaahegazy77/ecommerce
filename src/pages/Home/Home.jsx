@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Hero from '../../components/Hero/Hero'
 import ProductsSlider from '../../components/ProductsSlider/ProductsSlider'
 import Footer from '../../components/Footer/Footer'
+import { ProductsSliderSkeleton } from "../../components/Loader";
 
 const categories = [
     "smartphones",
@@ -45,16 +46,20 @@ const Home = () => {
         <>
             <Hero/>
 
-            {loading ? (
-                <p>Loading ... </p>
-            ) : (
-                    categories.map((category) => (
+            {
+                categories.map((category) =>
+                    loading ? (
+                        <ProductsSliderSkeleton
+                            key={category}
+                            title={category.replace("-", " ")}
+                        />
+                    ) : (
                         <ProductsSlider
                             key={category}
-                            title={category.replace("-" , " ")}
+                            title={category.replace("-", " ")}
                             data={products[category]}
                         />
-                    ))
+                    )
                 )
             }
 

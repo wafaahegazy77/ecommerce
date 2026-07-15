@@ -8,7 +8,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoMdShare } from "react-icons/io";
 import ProductsSlider from '../../components/ProductsSlider/ProductsSlider';
 import Footer from '../../components/Footer/Footer'
-
+import ProductDetailsSkeleton from '../../components/Loader/ProductDetailsSkeleton';
+import { ProductsSliderSkeleton } from "../../components/Loader";
 
 function ProductDetails() {
 
@@ -23,13 +24,18 @@ function ProductDetails() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await fetch(`https://dummyjson.com/products/${id}`)
-                const data = await res.json()
+                const res = await fetch(`https://dummyjson.com/products/${id}`);
+                if (!res.ok) {
+                    throw new Error("Failed to fetch product");
+                }
+                const data = await res.json();
                 setProduct(data);
-                setLoading(false);
             }
             catch (error){
-                console.log(error)
+                console.log(error);
+            }
+            finally{
+                setLoading(false);
             }
         }
         fetchProduct()
@@ -37,6 +43,8 @@ function ProductDetails() {
 
     useEffect(() => {
         if(!product) return
+        setLoadingRealProducts(true);
+        setRealProducts([]);
         fetch(`https://dummyjson.com/products/category/${product.category}`) 
         .then(res => res.json())
         .then((data)=> {
@@ -46,10 +54,8 @@ function ProductDetails() {
         .finally(() =>  setLoadingRealProducts(false) )
     } , [product?.category] )
 
-    console.log(product)
-    console.log(realProducts)
 
-    if(loading) return <p> Loading ... </p>
+    if(loading) return <ProductDetailsSkeleton />;
     if(!product) return <p> Product Not Found ... </p>
 
     return (
@@ -122,7 +128,9 @@ function ProductDetails() {
 
             {
                 loadingRealProducts ? (
-                    <p>Loading ... </p>
+                    <ProductsSliderSkeleton
+                        title={product.category.replace("-", " ")}
+                    />
                 ) : (
                     <ProductsSlider
                         key={product.category}
