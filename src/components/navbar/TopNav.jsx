@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../../img/logo.png'
 import './_navbar.scss'
 import { Link } from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
 import { IoHeartOutline } from "react-icons/io5";
 import { BsCart2 } from "react-icons/bs";
+import { CartContext } from '../Context/CartContext';
 
 
 const TopNav = () => {
+    const {cartItems } = useContext (CartContext)
     return (
         <>
             <div className="top_nav">
@@ -34,7 +36,7 @@ const TopNav = () => {
                                 </div>
                                 <div className='icon'>
                                     <BsCart2  />
-                                    <span className="count">  0 </span>
+                                    <span className="count">  {cartItems.length} </span>
                                 </div>
 
 
