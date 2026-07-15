@@ -118,3 +118,17 @@
         }
     }
 }
+
+
+@media screen and (max-width: 991px) {
+
+    .prod_card .card-body .name {
+        font-size: 14px;
+    }
+
+    .prod_card .img_box {
+        height: 200px;
+    }
+
+    
+}
