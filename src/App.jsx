@@ -8,10 +8,13 @@ import TopNav from "./components/navbar/TopNav"
 import Home from './pages/Home/Home'
 import { Route, Routes, useParams } from 'react-router-dom'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
     return (
         <>
+            <ScrollToTop />
+
             <div className="navs_container">
                 <TopNav/>
                 <MainNav/>
